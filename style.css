@@ -1,0 +1,293 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(90deg, rgba(153,50,204) 0%, rgb(41, 23, 143)100%);
+}
+
+.headerPag{
+    display: block !important;
+    height: 150px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 50px;
+    text-align: center;
+
+}
+
+.titlePag{
+    font-size: 80px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    color: #ffffff;
+    padding-bottom: 20px;
+}
+
+.victory{
+    background-color: #0ba747;
+    color: #ffffff;
+}
+.board{
+    display: none;
+    width: 100%;
+    height: 90%;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: repeat(3, auto);
+    
+}
+
+.cell{
+    width: 98px;
+    height: 98px;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(3){
+    border-top: none;
+}
+
+.cell:nth-child(1),
+.cell:nth-child(4),
+.cell:nth-child(7){
+    border-left: none;
+}
+
+.cell:nth-child(3),
+.cell:nth-child(6),
+.cell:nth-child(9){
+    border-right: none;
+}
+
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9){
+    border-bottom: none;
+}
+
+.board.xPlayer .cell:not(.x):not(.o):hover::after,
+.board.xPlayer .cell:not(.x):not(.o):hover::before{   
+    content: "";
+    height: 70px;
+    width: 15px;
+    background: rgba(255, 255, 255,0.4);
+    position: absolute;   
+}
+
+.board.xPlayer .cell:not(.x):not(.o):hover::before{
+    transform: rotate(45deg);
+}
+.board.xPlayer .cell:not(.x):not(.o):hover::after{
+    transform: rotate(-45deg);
+}
+
+.board.oPlayer .cell:not(.x):not(.o):hover::after,
+.board.oPlayer .cell:not(.x):not(.o):hover::before{   
+    content: "";
+    height: 33px;
+    width: 33px;
+    background: transparent;
+    position: absolute;
+    border-radius: 50%;
+    border: 15px solid rgba(255, 255, 255,0.4);   
+}
+
+.cell.x, .cell.o{
+    cursor: not-allowed;
+}
+
+.cell.x::before,
+.cell.x::after{
+    content: "";
+    height: 70px;
+    width: 15px;
+    background: white;
+    position: absolute;
+}
+
+.cell.x::before{
+    transform: rotate(45deg);
+}
+.cell.x::after{
+    transform: rotate(-45deg);
+}
+
+.cell.o::before,
+.cell.o::after{
+    content: "";
+    height: 33px;
+    width: 33px;
+    background: transparent;
+    position: absolute;
+    border-radius: 50%;
+    border: 15px solid white;
+}
+
+
+.divWinningMessage{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0,0.8);
+    flex-direction: column;
+}
+
+.btnReset{       
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 16px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.btnReset:hover{
+    background: rgb(61, 61, 61);
+    color: #ffffff;
+}
+
+.pWinningMessage{
+    font-size: 50px;
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+}
+
+.divPlayerRound{
+    display: none;
+    width: 100%;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center; 
+}
+
+.divPlayerRound p{
+    color: #ffffff;
+    font-size: 30px;
+    font-family:'Courier New', Courier, monospace;
+}
+
+.sectionFormPlayer1{
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;    
+    flex-direction: column;
+    gap: 15px;
+    
+}
+
+.sectionFormPlayer1 label{
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.sectionFormPlayer1 button{
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 25px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.sectionFormPlayer1 button:hover{
+    background-color: #ffffff;
+    color: #5e0897;
+}
+
+.sectionFormPlayer1 input{
+    width: 300px;
+    height: 40px;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+
+}
+
+.sectionFormPlayer1 input[type=text]:focus {
+    border: solid rgb(255, 255, 255);
+    border-radius: 4px;
+}
+
+.sectionFormPlayer2{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    
+}
+
+.sectionFormPlayer2 label{
+    color: #ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.sectionFormPlayer2 button{
+    background-color: #000000;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 25px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.sectionFormPlayer2 button:hover{
+    background-color: #ffffff;
+    color: #5e0897;
+}
+
+.sectionFormPlayer2 input{
+    width: 300px;
+    height: 40px;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.sectionFormPlayer2 input[type=text]:focus {
+    border: rgb(15, 138, 209);
+    border-radius: 4px;
+}

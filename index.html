@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+</head>
+
+<body>
+    <div class="headerPag">
+        <p class="titlePag">Jogo da Velha</p>
+        <hr>
+    </div>
+
+    <div class="divPlayerRound">
+        <p id="playerRound" class="titlePlayerRound"></p>
+    </div>
+
+    <div class="board">
+        <div class="cell empty" data-cell></div>
+        <div class="cell empty" data-cell></div>
+        <div class="cell empty" data-cell></div>
+        <div class="cell empty" data-cell></div>
+        <div class="cell empty" data-cell></div>
+        <div class="cell empty" data-cell></div>
+        <div class="cell empty" data-cell></div>
+        <div class="cell empty" data-cell></div>
+        <div class="cell empty" data-cell></div>
+    </div>
+
+    <div class="divWinningMessage" data-winningMessenger>
+        <p class="pWinningMessage"></p>
+        <button id="btnReset" class="btnReset">Reset</button>
+    </div>
+
+    <div class="sectionFormPlayer1">
+        <label for="namePlayer1">Nome do player 1</label>
+        <input type="text" name="namePlayer1" id="namePlayer1">
+        <button type="submit" id="buttonRegisterPlayer1">Entrar</button>
+    </div>
+
+    <div class="sectionFormPlayer2">
+        <label for="namePlayer2">Nome do player 2:</label>
+        <input type="text" name="namePlayer2" id="namePlayer2">
+        <button type="submit" id="buttonRegisterPlayer2">Entrar</button>
+    </div>
+
+</body>
+
+</html>
